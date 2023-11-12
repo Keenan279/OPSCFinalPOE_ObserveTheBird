@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">ObserveTheBird</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="Continue_with_google_label">Continue with Google</string>
+    <string name="Continue_wit_apple">Continue with Apple</string>
+    <string name="Continue_with_meta">Continue with Meta</string>
+    <string name="Continue_with_git">Continue with GitHub</string>
+    <string name="Sign_in_username">Continue with Username</string>
+    <string name="no_account_label">Don\'t have an account? We got you.</string>
+    <string name="sign_up_label">Sign Up</string>
+    <string name="Sign_In_label">Sign In</string>
+    <string name="username_label">Username</string>
+    <string name="password_label">Password</string>
+    <string name="email_label">Email</string>
+    <string name="cellphone_label">Cell Phone</string>
+    <string name="Date_label">Date</string>
+</resources>

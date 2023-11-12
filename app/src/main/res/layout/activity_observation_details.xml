@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#E93C12"
+    tools:context=".ObservationDetails">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:id="@+id/backButton"
+            android:padding="14dp"
+            android:src="@drawable/back_button"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/headerEditAccount"
+            android:layout_centerInParent="true"
+            android:text="Bird Observation Details"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:cardBackgroundColor="#E0A76B">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bird Species"
+                            android:layout_gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="20sp"
+                            android:textColor="@color/colorPrimary"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/txtspecies1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Bird Species">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/txtSpecies"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#FFFFFF"/>
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/txtcolour"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Colour Of Bird">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/txtColour"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#FFFFFF"
+                                app:passwordToggleEnabled="true" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/txtdate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Date Of Observation (dd/mm/yyyy)">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/txtDate"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#FFFFFF"
+                                android:inputType="date" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="15dp"
+                            android:layout_gravity="center_horizontal">
+
+                            <Button
+                                android:id="@+id/btnSave"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="SAVE"
+                                android:textSize="14sp"
+                                android:layout_marginLeft="112dp"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="133dp"
+                    android:layout_height="285dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="20dp"
+                    app:srcCompat="@drawable/logo" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,23 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.ObserveTheBird" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.ObserveTheBird" parent="Base.Theme.ObserveTheBird" />
+
+    <!-- Theme Style for Metric Switch -->
+    <style name="nightModeSwitch" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/night_mode</item>
+        <item name="colorSwitchThumbNormal">#FFFFFF</item>
+        <item name="android:colorForeground">#99FFFFFF</item>
+    </style>
+
+    <!-- Theme Style for Imperial Switch -->
+    <style name="notificationsSwitch" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/notifications</item>
+        <item name="colorSwitchThumbNormal">#FFFFFF</item>
+        <item name="android:colorForeground">#99FFFFFF</item>
+    </style>
+</resources>
