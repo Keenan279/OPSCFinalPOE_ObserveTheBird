@@ -8,6 +8,9 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.core.text.isDigitsOnly
 import com.example.observethebird.databinding.ActivityRegisterBinding
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
@@ -63,20 +66,32 @@ class Register : AppCompatActivity() {
                         {
                             if (pass == conpass)
                             {
-                                // Adding the users details into the database
-                                val user = User(username, email, number, dateofbirth, pass, "Metric", "10")
-                                myRef.child(username).setValue(user)
+                                // Check if the username already exists in the database
+                                myRef.child(username).addListenerForSingleValueEvent(object : ValueEventListener {
+                                    override fun onDataChange(snapshot: DataSnapshot) {
+                                        if (snapshot.exists()) {
+                                            // Username already exists
+                                            Toast.makeText(this@Register, "Username is already taken", Toast.LENGTH_SHORT).show()
+                                        } else {
+                                            // Username is available, add the user to the database
+                                            val user = User(username, email, number, dateofbirth, pass, "Metric", "10")
+                                            myRef.child(username).setValue(user)
 
-                                // Displaying a success message if the register was successful
-                                Toast.makeText(this, "Registered Successfully", Toast.LENGTH_SHORT).show()
+                                            // Displaying a success message if the register was successful
+                                            Toast.makeText(this@Register, "Registered Successfully", Toast.LENGTH_SHORT).show()
 
-                                // Intent to take the user to the Login activity (From IntentHelperClass)
-                                ClassIntent(this ,MainActivity::class.java)
-                                sound.playSound()
+                                            // Intent to take the user to the Login activity (From IntentHelperClass)
+                                            ClassIntent(this@Register, MainActivity::class.java)
+                                            sound.playSound()
+                                        }
+                                    }
 
-                            }
-                            else
-                            {
+                                    override fun onCancelled(error: DatabaseError) {
+                                        // Handles error
+                                        Toast.makeText(this@Register, "Error checking username existence", Toast.LENGTH_SHORT).show()
+                                    }
+                                })
+                            } else {
                                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
                             }
                         }

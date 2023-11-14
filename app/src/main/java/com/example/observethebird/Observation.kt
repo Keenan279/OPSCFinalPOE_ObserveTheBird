@@ -1,27 +1,22 @@
 package com.example.observethebird
 
-import android.graphics.Bitmap
 import java.io.Serializable
 
-class Observations : Serializable {
+class Observation : Serializable {       //serializable class that will be used to carry data across activities
 
-    var Longitude : String
-    var Latitude : String
+    var Longitude : Double
+    var Latitude : Double
     var Species : String
     var Colour : String
     var Date : String
-    var metricOrImperial : String
-    var maximumTravelDistance: String
 
     // Class constructor
-    constructor(LongitudeIn: String, LatitudeIn : String, SpeciesIn: String, TaskStartTimeIN: String, TaskEndTimeIN : String, TaskCategoryIN: String)
+    constructor(LongitudeIn: Double, LatitudeIn : Double, SpeciesIn: String, ColourIn: String, DateIn : String)
     {
         Longitude = LongitudeIn
         Latitude = LatitudeIn
         Species = SpeciesIn
         Colour = ColourIn
         Date = DateIn
-        metricOrImperial = metricOrImperialIn
-        maximumTravelDistance = maximumTravelDistanceIn
     }
 }

@@ -50,14 +50,14 @@ class ObservationDetails : AppCompatActivity() {
 
 
 
-        binding.btnSave.setOnClickListener {
+        binding.btnSave.setOnClickListener {                           //method runs once the data has been inputted and button is pressed
             val species = binding.txtSpecies.text.toString().trim()
             val description = binding.txtColour.text.toString().trim()
             val date = binding.txtDate.text.toString().trim()
 
             if (date.matches(datePattern.toRegex()) && species.isNotEmpty() && description.isNotEmpty() && date.isNotEmpty()) {
                 val sighting = Sighting(
-                    UserSingleton.username,
+                    UserSingleton.username,                        //retrieved from singleton
                     latitude,
                     longitude,
                     species,
@@ -72,8 +72,7 @@ class ObservationDetails : AppCompatActivity() {
                 observationsRef.updateChildren(observationUpdates)
 
                 val intent = Intent()
-                intent.putExtra("sighting", sighting)
-            //    intent.putExtra("observation_saved", true)
+                intent.putExtra("sighting", sighting)             //returns user back to map holding the data
                 setResult(Activity.RESULT_OK, intent)
                 sound.playSound()
 
