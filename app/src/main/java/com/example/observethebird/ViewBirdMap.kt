@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.example.observethebird.UserSingleton.maximumTravelDistance
 import com.example.observethebird.databinding.ActivityEditAccountBinding
 import com.example.observethebird.databinding.ActivityViewBirdMapBinding
 import com.google.android.gms.location.LocationServices
@@ -46,7 +47,6 @@ class ViewBirdMap : AppCompatActivity() {
     private val directionsApiKey = "AIzaSyB9vPuFXqCHMSmpR1BBr5cNOiphcXhMP_c"
 
     private var currentPolyline: Polyline? = null       //sets polyline to null value
-    private var maximumTravelDistance: Int = 2          //default setting for travel distance
 
     private var chosenOption: String =" Miles"      //Default choice
 
@@ -66,7 +66,7 @@ class ViewBirdMap : AppCompatActivity() {
 
         // ******************************* CLASS VARIABLES *****************************************
         // Receives the maximumTravelDistance string value from Settings (From IntentHelper)
-        var maximumTravelDistance = intent.getSerializableExtra("maximumTravelDistance") as Int?
+        var maximumTravelDistance = UserSingleton.maximumTravelDistance
         // Holds the values passed over from the Save Observation activity
         var observations = arrayListOf<Observation>()
 

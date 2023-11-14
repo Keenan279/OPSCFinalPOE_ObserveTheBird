@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         binding.btnLogin.setOnClickListener {
             val username = binding.txtUsername.text.toString().trim()
             val password = binding.txtPassword.text.toString().trim()
-
+            UserSingleton.maximumTravelDistance=2                          //resets max distance to default for each user
             if(username.isNotEmpty() && password.isNotEmpty())
             {
                 // Running the loginUser method with the entered in values

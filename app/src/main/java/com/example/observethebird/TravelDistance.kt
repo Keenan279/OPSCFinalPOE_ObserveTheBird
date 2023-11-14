@@ -38,6 +38,8 @@ class TravelDistance : AppCompatActivity() {
                 {
                     // Method to update the travel distance value in the database
                     updateDistance(stringDistance)
+                    UserSingleton.maximumTravelDistance =  stringDistance.toInt()
+
                 }
                 else
                 {
